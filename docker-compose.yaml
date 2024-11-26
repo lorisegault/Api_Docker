@@ -1,0 +1,31 @@
+name: Bibliotheque
+services:
+    back:
+        image: api_back:latest
+        ports: 
+            - 5009:5009
+        build:
+          context: ./api
+          dockerfile: Dockerfile
+        volumes: 
+          - ./api/data:/app/data
+        networks:
+            - reseau_api
+    front:
+        image: api_front:latest
+        ports: 
+            - 5000:5000
+        build:
+          context: ./front
+          dockerfile: Dockerfile
+        depends_on:
+          - back
+        environment:
+          - API_URL=http://back:5009
+        networks:
+            - reseau_api
+networks:
+    reseau_api: 
+        driver: bridge
+        
+        

@@ -1,0 +1,139 @@
+{% extends "base.j2" %}
+
+{% block title %}Résultats - Bibliothèque{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Titre principal -->
+    <h1 class="text-center text-primary mb-4">🔍 Résultats de la recherche</h1>
+
+    {% if type_recherche == "utilisateur" %}
+        {% if resultats[0].id %}
+            {% for utilisateur in resultats %}
+                <!-- Informations sur l'utilisateur -->
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Informations sur l'utilisateur</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <tr>
+                                <th>ID</th>
+                                <td>{{ utilisateur.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <td>{{ utilisateur.nom }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ utilisateur.email }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Livres empruntés -->
+                {% if utilisateur.emprunts %}
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header bg-secondary text-white">
+                            <h5>Livres empruntés</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Titre</th>
+                                        <th>Auteur</th>
+                                        <th>Date de Publication</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for livre in utilisateur.emprunts %}
+                                    <tr>
+                                        <td>{{ livre.id }}</td>
+                                        <td>{{ livre.titre }}</td>
+                                        <td>{{ livre.auteur_nom }}</td>
+                                        <td>{{ livre.date_public }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="alert alert-info text-center">
+                        📖 Cet utilisateur n'a emprunté aucun livre.
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <!-- Aucun utilisateur trouvé -->
+            <div class="alert alert-warning text-center">
+                ❌ Aucun utilisateur trouvé. Voici la liste complète :
+            </div>
+            <table class="table table-striped table-hover mt-3">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for utilisateur in resultats %}
+                    <tr>
+                        <td>{{ utilisateur.id }}</td>
+                        <td>{{ utilisateur.nom }}</td>
+                        <td>{{ utilisateur.email }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% elif type_recherche == "livre" %}
+        <!-- Résultats pour les livres -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4>Résultats pour les livres</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Auteur</th>
+                            <th>Date de Publication</th>
+                            <th>Disponibilité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for livre in resultats %}
+                        <tr>
+                            <td>{{ livre.id }}</td>
+                            <td>{{ livre.titre }}</td>
+                            <td>{{ livre.auteur_nom }}</td>
+                            <td>{{ livre.date_public }}</td>
+                            <td>
+                            {% if livre.emprunteur_id == None %}
+                                <span class="badge bg-success">Disponible</span>
+                            {% else %}
+                                <span class="badge bg-danger">Emprunté par {{ livre.emprunteur_nom }}</span>
+                            {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% else %}
+        <!-- Aucun résultat trouvé -->
+        <div class="alert alert-info text-center">
+            📄 Aucun résultat trouvé pour votre recherche.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

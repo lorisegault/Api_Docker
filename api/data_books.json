@@ -1,0 +1,177 @@
+[
+    {
+        "id": "1",
+        "title": "Les Mis\u00e9rables",
+        "content": "L'histoire de Jean Valjean, un ancien bagnard en qu\u00eate de r\u00e9demption, et de sa relation avec l'inspecteur Javert.",
+        "author": "Victor Hugo",
+        "date": "14\/04\/1862"
+    },
+    {
+        "id": "2",
+        "title": "Madame Bovary",
+        "content": "L'histoire d'Emma Bovary, une femme insatisfaite de sa vie conjugale et en qu\u00eate de passion et de bonheur.",
+        "author": "Gustave Flaubert",
+        "date": "01\/10\/1856"
+    },
+    {
+        "id": "3",
+        "title": "Germinal",
+        "content": "L'histoire d'une gr\u00e8ve des mineurs dans le nord de la France et de leur lutte pour de meilleures conditions de travail.",
+        "author": "\u00c9mile Zola",
+        "date": "28\/11\/1885"
+    },
+    {
+        "id": "4",
+        "title": "L'\u00c9tranger",
+        "content": "L'histoire de Meursault, un homme indiff\u00e9rent \u00e0 la vie et \u00e0 la mort, et de son meurtre d'un Arabe.",
+        "author": "Albert Camus",
+        "date": "01\/06\/1942"
+    },
+    {
+        "id": "5",
+        "title": "La Peste",
+        "content": "L'histoire d'une \u00e9pid\u00e9mie de peste \u00e0 Oran, en Alg\u00e9rie, et de la r\u00e9ponse de la ville \u00e0 cette crise.",
+        "author": "Albert Camus",
+        "date": "16\/06\/1947"
+    },
+    {
+        "id": "6",
+        "title": "Les Fleurs du mal",
+        "content": "Un recueil de po\u00e8mes explorant la beaut\u00e9 de la laideur et de la tristesse, ainsi que la dualit\u00e9 de l'\u00e2me humaine.",
+        "author": "Charles Baudelaire",
+        "date": "23\/06\/1857"
+    },
+    {
+        "id": "7",
+        "title": "Les Liaisons dangereuses",
+        "content": "L'histoire de deux nobles fran\u00e7ais, le vicomte de Valmont et la marquise de Merteuil, qui se livrent \u00e0 des jeux de s\u00e9duction cruels et dangereux.",
+        "author": "Pierre Choderlos de Laclos",
+        "date": "23\/03\/1782"
+    },
+    {
+        "id": "8",
+        "title": "Voyage au bout de la nuit",
+        "content": "L'histoire de Ferdinand Bardamu, un m\u00e9decin qui sert dans la Premi\u00e8re Guerre mondiale et qui se trouve pris dans les bouleversements sociaux et politiques du XXe si\u00e8cle.",
+        "author": "Louis-Ferdinand C\u00e9line",
+        "date": "04\/10\/1932"
+    },
+    {
+        "id": "9",
+        "title": "Les Choses",
+        "content": "L'histoire de deux jeunes Parisiens, Pierre et Vincent, qui cherchent \u00e0 trouver le bonheur et la r\u00e9ussite dans la soci\u00e9t\u00e9 de consommation des ann\u00e9es 1960.",
+        "author": "Georges Perec",
+        "date": "01\/03\/1965"
+    },
+    {
+        "id": "10",
+        "title": "Les Cerfs-volants",
+        "content": "L'histoire d'un p\u00e8re et de son fils en Afghanistan, de la chute du r\u00e9gime monarchique \u00e0 l'arriv\u00e9e au pouvoir des talibans.",
+        "author": "Khaled Hosseini",
+        "date": "29\/05\/2003"
+    },
+    {
+        "id": "11",
+        "title": "Le Nom de la rose",
+        "content": "L'histoire de Guillaume de Baskerville, un moine franciscain qui enqu\u00eate sur une s\u00e9rie de meurtres myst\u00e9rieux dans une abbaye italienne du XIVe si\u00e8cle.",
+        "author": "Umberto Eco",
+        "date": "27\/09\/1980"
+    },
+    {
+        "id": "12",
+        "title": "La M\u00e9tamorphose",
+        "content": "L'histoire de Gregor Samsa, un homme qui se r\u00e9veille un matin transform\u00e9 en un insecte g\u00e9ant et qui doit faire face \u00e0 cette nouvelle r\u00e9alit\u00e9.",
+        "author": "Franz Kafka",
+        "date": "15\/10\/1915"
+    },
+    {
+        "id": "13",
+        "title": "Au bonheur des dames",
+        "content": "L'histoire de Denise Baudu, une jeune provinciale qui vient \u00e0 Paris pour travailler chez un grand magasin et qui tombe amoureuse de son patron.",
+        "author": "\u00c9mile Zola",
+        "date": "15\/11\/1883"
+    },
+    {
+        "id": "14",
+        "title": "La Horde du Contrevent",
+        "content": "L'histoire d'une exp\u00e9dition d'une troupe de personnages qui traversent un monde soumis \u00e0 des vents violents, afin de d\u00e9couvrir l'origine de ces vents.",
+        "author": "Alain Damasio",
+        "date": "03\/05\/2004"
+    },
+    {
+        "id": "15",
+        "title": "Les Rois maudits",
+        "content": "L'histoire de la fin de la dynastie des Cap\u00e9tiens directs en France, du r\u00e8gne de Philippe IV le Bel \u00e0 celui de Jean II.",
+        "author": "Maurice Druon",
+        "date": "03\/01\/1955"
+    },
+    {
+        "id": "16",
+        "title": "Le Comte de Monte-Cristo",
+        "content": "L'histoire d'Edmond Dant\u00e8s, un jeune marin injustement emprisonn\u00e9, qui s'\u00e9vade et se venge de ceux qui l'ont trahi.",
+        "author": "Alexandre Dumas",
+        "date": "28\/08\/1844"
+    },
+    {
+        "id": "17",
+        "title": "La Guerre et la Paix",
+        "content": "L'histoire de la vie des nobles russes pendant les guerres napol\u00e9oniennes, avec un accent sur les histoires d'amour et les intrigues politiques.",
+        "author": "L\u00e9on Tolsto\u00ef",
+        "date": "05\/12\/1865"
+    },
+    {
+        "id": "18",
+        "title": "Les Trois Mousquetaires",
+        "content": "L'histoire de d'Artagnan, un jeune gascon qui quitte sa maison pour devenir mousquetaire et vivre de nombreuses aventures avec ses amis.",
+        "author": "Alexandre Dumas",
+        "date": "14\/03\/1844"
+    },
+    {
+        "id": "19",
+        "title": "Le Parfum",
+        "content": "L'histoire de Jean-Baptiste Grenouille, un parfumeur qui cherche \u00e0 cr\u00e9er le parfum parfait en tuant des femmes pour utiliser leur odeur.",
+        "author": "Patrick S\u00fcskind",
+        "date": "08\/09\/1985"
+    },
+    {
+        "id": "20",
+        "title": "La Vie mode d'emploi",
+        "content": "Un roman complexe qui suit la vie des habitants d'un immeuble parisien et explore les relations entre les gens et les objets.",
+        "author": "Georges Perec",
+        "date": "05\/09\/1978"
+    },
+    {
+        "id": "21",
+        "title": "Le Rouge et le Noir",
+        "content": "L'histoire de Julien Sorel, un jeune homme ambitieux qui veut s'\u00e9lever dans la soci\u00e9t\u00e9 fran\u00e7aise du XIXe si\u00e8cle, mais qui est entrav\u00e9 par ses passions.",
+        "author": "Stendhal",
+        "date": "12\/12\/1830"
+    },
+    {
+        "id": "22",
+        "title": "Bel-Ami",
+        "content": "L'histoire de Georges Duroy, un ancien soldat qui arrive \u00e0 Paris et qui gravit les \u00e9chelons de la soci\u00e9t\u00e9 gr\u00e2ce \u00e0 son charisme et son ambition.",
+        "author": "Guy de Maupassant",
+        "date": "18\/07\/1885"
+    },
+    {
+        "id": "23",
+        "title": "L'Assommoir",
+        "content": "L'histoire de Gervaise Macquart, une blanchisseuse qui lutte pour survivre dans les rues de Paris, tout en \u00e9tant confront\u00e9e \u00e0 l'alcoolisme et \u00e0 la pauvret\u00e9.",
+        "author": "\u00c9mile Zola",
+        "date": "17\/03\/1877"
+    },
+    {
+        "id": "24",
+        "title": "Le Grand Meaulnes",
+        "content": "L'histoire d'Augustin Meaulnes, un jeune homme qui tombe amoureux d'Yvonne de Galais lors d'une f\u00eate de village, mais qui perd sa trace et passe sa vie \u00e0 la chercher.",
+        "author": "Alain-Fournier",
+        "date": "19\/11\/1913"
+    },
+    {
+        "id": "25",
+        "title": "Madame Bovary",
+        "content": "L'histoire d'Emma Bovary, une jeune femme qui s'ennuie dans sa vie de province et qui cherche l'aventure et l'amour, mais qui finit par \u00eatre d\u00e9\u00e7ue et d\u00e9sillusionn\u00e9e.",
+        "author": "Gustave Flaubert",
+        "date": "03\/02\/1857"
+    }
+]

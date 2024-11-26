@@ -1,0 +1,43 @@
+{% extends "base.j2" %}
+
+{% block title %}Livres empruntés - Bibliothèque{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Titre principal -->
+    <h1 class="text-center my-5 text-primary">📚 Liste des livres empruntés</h1>
+
+    {% if livres %}
+        <!-- Tableau des livres empruntés -->
+        <div class="table-responsive shadow-lg">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="bg-dark text-light">
+                    <tr class="text-center">
+                        <th>ID</th>
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Emprunteur</th>
+                        <th>Date de publication</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for livre in livres %}
+                    <tr>
+                        <td class="text-center">{{ livre.id }}</td>
+                        <td>{{ livre.titre }}</td>
+                        <td>{{ livre.auteur_nom }}</td>
+                        <td>{{ livre.emprunteur_nom }}</td>
+                        <td>{{ livre.date_public }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <!-- Message en cas d'absence de livres -->
+        <div class="alert alert-warning text-center" role="alert">
+            📖 Aucun livre n'a été emprunté pour le moment.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

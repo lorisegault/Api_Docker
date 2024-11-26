@@ -1,0 +1,8 @@
+FROM python:3.11-alpine
+RUN apk update
+WORKDIR /app
+COPY . /app
+VOLUME /app/data
+EXPOSE 5000
+RUN pip install -r requirements.txt
+CMD ["python3", "api_front.py"]

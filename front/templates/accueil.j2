@@ -1,0 +1,35 @@
+{% extends "base.j2" %}
+
+{% block title %}Accueil - Bibliothèque en ligne{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4 text-primary">Bienvenue dans la Bibliothèque en ligne</h1>
+    
+    <div class="card shadow-lg border-0">
+        <div class="card-body">
+            <form method="POST">
+                <!-- Section de recherche pour les utilisateurs -->
+                <div class="mb-4">
+                    <h4 class="text-secondary">Rechercher un utilisateur</h4>
+                    <label for="recherche_utilisateur" class="form-label">Nom ou ID utilisateur :</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="recherche_utilisateur" name="recherche_utilisateur" placeholder="Ex : Jean Dupont ou 12345">
+                        <button type="submit" name="type_recherche" value="utilisateur" class="btn btn-primary">Rechercher</button>
+                    </div>
+                </div>
+
+                <!-- Section de recherche pour les livres -->
+                <div class="mb-4">
+                    <h4 class="text-secondary">Rechercher un livre</h4>
+                    <label for="recherche_livre" class="form-label">Titre ou ID livre :</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="recherche_livre" name="recherche_livre" placeholder="Ex : Le Petit Prince ou 67890">
+                        <button type="submit" name="type_recherche" value="livre" class="btn btn-success">Rechercher</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

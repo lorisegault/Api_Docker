@@ -1,0 +1,51 @@
+{% extends "base.j2" %}
+
+{% block title %}Livres - Bibliothèque en ligne{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Titre principal -->
+    <h1 class="text-center text-primary mb-4">📚 Liste des livres disponibles</h1>
+
+    {% if livres %}
+        <!-- Tableau des livres -->
+        <div class="table-responsive shadow-lg">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="bg-dark text-light text-center">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Date de publication</th>
+                        <th>Disponibilité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for livre in livres %}
+                    <tr>
+                        <td class="text-center">{{ livre.id }}</td>
+                        <td>{{ livre.nom }}</td>
+                        <td>{{ livre.titre }}</td>
+                        <td>{{ livre.auteur_nom }}</td>
+                        <td>{{ livre.date_public }}</td>
+                        <td class="text-center">
+                            {% if livre.emprunteur_id == None %}
+                                <span class="badge bg-success">Disponible</span>
+                            {% else %}
+                                <span class="badge bg-danger">Emprunté par {{ livre.emprunteur_nom }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <!-- Message en cas d'absence de livres -->
+        <div class="alert alert-info text-center mt-4" role="alert">
+            📖 Aucun livre n'est actuellement disponible dans la bibliothèque.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
