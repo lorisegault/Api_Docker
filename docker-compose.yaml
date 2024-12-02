@@ -1,5 +1,17 @@
 name: Bibliotheque
 services:
+
+    auth:
+        image: api_auth:latest
+        ports: 
+            - 5008:5008
+        build:
+          context: ./auth
+          dockerfile: Dockerfile
+        networks:
+            - reseau_api
+
+
     back:
         image: api_back:latest
         ports: 
@@ -7,10 +19,16 @@ services:
         build:
           context: ./api
           dockerfile: Dockerfile
+        depends_on:
+          - auth
+        environment:
+          - AUTH_API_URL=http://auth:5008
+
         volumes: 
           - ./api/data:/app/data
         networks:
             - reseau_api
+
     front:
         image: api_front:latest
         ports: 
@@ -20,10 +38,15 @@ services:
           dockerfile: Dockerfile
         depends_on:
           - back
+          - auth
         environment:
           - API_URL=http://back:5009
+          - AUTH_API_URL=http://auth:5008
+
         networks:
             - reseau_api
+
+
 networks:
     reseau_api: 
         driver: bridge
