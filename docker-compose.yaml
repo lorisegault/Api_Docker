@@ -8,6 +8,8 @@ services:
         build:
           context: ./auth
           dockerfile: Dockerfile
+        volumes: 
+          - ./api/data:/app/data
         networks:
             - reseau_api
 
