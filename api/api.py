@@ -1,17 +1,13 @@
-# Ou bien pour génération automatique : Code en FastAPI
-
 import sqlite3
-from fastapi import FastAPI, HTTPException, Path, Body
-from typing import Union, Callable, Annotated
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse
-import random
-import json
-import time
+from fastapi import Request
+import httpx  
 import pathlib
 import os
 
-path_to_db = pathlib.Path(__file__).parent.absolute() /"data" / "database.db"
+path_to_db = pathlib.Path(__file__).parent.absolute() / "data" / "database.db"
 
 
 class Utilisateur(BaseModel):
@@ -26,6 +22,46 @@ class Utilisateur(BaseModel):
 
 # .....................................................................
 app = FastAPI()
+
+
+
+AUTH_API_URL = os.environ.get("AUTH_API_URL", "http://auth:5008/users/me")
+
+@app.middleware("http")
+async def verify_token(request: Request, call_next):
+    excluded_paths = ["/docs", "/openapi.json", "/redoc"]
+    
+    if request.url.path in excluded_paths:
+        return await call_next(request)
+    else:
+        token = request.headers.get("Authorization")
+        if not token or not token.startswith("Bearer "):
+            return JSONResponse(
+                status_code=401,
+                content={"message": "Unauthorized: Missing or invalid token"},
+            )
+
+        token = token.split("Bearer")[1]
+
+        async with httpx.AsyncClient() as client:
+            try:
+                response = await client.get(
+                    AUTH_API_URL,
+                    headers={"Authorization": f"Bearer {token}"},
+                )
+                if response.status_code == 401:
+                    return JSONResponse(
+                        status_code=401,
+                        content={"message": "Unauthorized: Invalid token"},
+                    )
+            except httpx.RequestError as e:
+                return JSONResponse(
+                    status_code=500,
+                    content={"message": f"Authentication service error: {str(e)}"},
+                )
+
+        response = await call_next(request)
+        return response
 
 
 @app.get("/")
